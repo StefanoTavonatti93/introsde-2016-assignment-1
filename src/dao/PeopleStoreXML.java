@@ -153,5 +153,15 @@ public class PeopleStoreXML {
 	public String list() throws XPathExpressionException{
 		return list(getNodeByExpression("/people/person"));
 	}
+	
+	/**
+	 * Print the HealtProfile of the person identified by the id in the parameters
+	 * @param id Person ID
+	 * @return a String containing the healtprofile of the person, this string is ready to print
+	 * @throws XPathExpressionException
+	 */
+	public String getHealtProfile(long id) throws XPathExpressionException{
+		return list(getNodeByExpression("//person[@id="+id+"]/healthprofile"));
+	}
 
 }

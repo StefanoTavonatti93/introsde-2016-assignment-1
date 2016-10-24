@@ -30,7 +30,8 @@ public class Evaluation {
 			//System.out.println("weight: "+peopleStoreXML.getWeight(new Long(5))+" height: "+peopleStoreXML.getHeight(new Long(5)));
 			//System.out.println(peopleStoreXML.list());
 			//System.out.println(peopleStoreXML.list(peopleStoreXML.getWeight(56, "=")));
-			System.out.println(peopleStoreXML.list(peopleStoreXML.getHeight(1.43, "=")));
+			//System.out.println(peopleStoreXML.list(peopleStoreXML.getHeight(1.43, "=")));
+			System.out.println(peopleStoreXML.getHealtProfile(new Long(5)));
 		} catch (XPathExpressionException e) {
 			e.printStackTrace();
 		}
