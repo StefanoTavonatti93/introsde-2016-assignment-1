@@ -53,17 +53,17 @@ public class PeopleStoreXML {
 	}
 	
 	/**
-	 * return a NodeList which contains the nodes that satisfied the condition specified
+	 * return a String which contains the nodes that satisfied the condition specified
 	 * @param weight the value of weight that will be used in the condition
 	 * @param operator the operator of the condition, one of: "<", "<=", ">", ">=", "="
-	 * @return NodeList which contains the nodes that satisfied the condition specified
+	 * @return a String which contains the nodes that satisfied the condition specified
 	 * @throws XPathExpressionException
 	 */
-	public NodeList getWeight(double weight, String operator) throws XPathExpressionException{
+	public String getWeight(double weight, String operator) throws XPathExpressionException{
 		
 		/* check if the operator given in the parameter is a valid operator*/
 		if(operator.equals(">") || operator.equals(">=") || operator.equals("=") || operator.equals("<") || operator.equals("<="))
-			return getNodeByExpression("//person[healthprofile/weight"+operator+"'"+weight+"']");
+			return list(getNodeByExpression("//person[healthprofile/weight"+operator+"'"+weight+"']"));
 		else
 			return null;
 	}
@@ -82,17 +82,17 @@ public class PeopleStoreXML {
 	}
 	
 	/**
-	 *  return a NodeList which contains the nodes that satisfied the condition specified
+	 *  return a String which contains the nodes that satisfied the condition specified
 	 * @param height the value of height that will be used in the condition
 	 * @param operator the operator of the condition, one of: "<", "<=", ">", ">=", "="
-	 * @return NodeList which contains the nodes that satisfied the condition specified
+	 * @return String which contains the nodes that satisfied the condition specified
 	 * @throws XPathExpressionException
 	 */
-	public NodeList getHeight(double height, String operator) throws XPathExpressionException{
+	public String getHeight(double height, String operator) throws XPathExpressionException{
 		
 		/* check if the operator given in the parameter is a valid operator*/
 		if(operator.equals(">") || operator.equals(">=") || operator.equals("=") || operator.equals("<") || operator.equals("<="))
-			return getNodeByExpression("//person[healthprofile/height"+operator+"'"+height+"']");
+			return list(getNodeByExpression("//person[healthprofile/height"+operator+"'"+height+"']"));
 		else
 			return null;
 	}
