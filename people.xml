@@ -1,203 +1,225 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <people>
+    <peopleList>
         <person id="1">
             <firstname>Guido</firstname>
             <lastname>Piano</lastname>
-            <birthdate>1954-10-09</birthdate>
+            <birthdate>1965-07-24</birthdate>
             <healthprofile>
-                <weight>56.0</weight>
-                <height>1.6</height>
-                <bmi>21.874999999999996</bmi>
+                <lastUpdate>2016-10-24 17:19:21.571</lastUpdate>
+                <weight>70.0</weight>
+                <height>1.72</height>
+                <bmi>23.661438615467823</bmi>
             </healthprofile>
         </person>
         <person id="2">
             <firstname>Ilaria</firstname>
             <lastname>Condizionata</lastname>
-            <birthdate>1966-08-03</birthdate>
+            <birthdate>2000-09-04</birthdate>
             <healthprofile>
-                <weight>78.0</weight>
-                <height>1.8</height>
-                <bmi>24.074074074074073</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>77.0</weight>
+                <height>1.43</height>
+                <bmi>37.65465303926843</bmi>
             </healthprofile>
         </person>
         <person id="3">
             <firstname>Bianca</firstname>
             <lastname>Carta</lastname>
-            <birthdate>1998-09-21</birthdate>
+            <birthdate>1999-09-24</birthdate>
             <healthprofile>
-                <weight>52.0</weight>
-                <height>1.86</height>
-                <bmi>15.030639380275174</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>53.0</weight>
+                <height>1.4</height>
+                <bmi>27.040816326530617</bmi>
             </healthprofile>
         </person>
         <person id="4">
             <firstname>Gustavo</firstname>
             <lastname>Lapasta</lastname>
-            <birthdate>1972-06-17</birthdate>
+            <birthdate>1996-01-07</birthdate>
             <healthprofile>
-                <weight>64.0</weight>
-                <height>1.92</height>
-                <bmi>17.36111111111111</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>82.0</weight>
+                <height>1.61</height>
+                <bmi>31.634581999151262</bmi>
             </healthprofile>
         </person>
         <person id="5">
             <firstname>Mario</firstname>
             <lastname>Rossi</lastname>
-            <birthdate>1952-11-27</birthdate>
+            <birthdate>1989-05-20</birthdate>
             <healthprofile>
-                <weight>58.0</weight>
-                <height>1.93</height>
-                <bmi>15.5708878090687</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>56.0</weight>
+                <height>1.61</height>
+                <bmi>21.60410477990818</bmi>
             </healthprofile>
         </person>
         <person id="6">
             <firstname>John</firstname>
             <lastname>Doe</lastname>
-            <birthdate>1965-05-02</birthdate>
+            <birthdate>1991-11-23</birthdate>
             <healthprofile>
-                <weight>56.0</weight>
-                <height>1.84</height>
-                <bmi>16.5406427221172</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>88.0</weight>
+                <height>1.98</height>
+                <bmi>22.44668911335578</bmi>
             </healthprofile>
         </person>
         <person id="7">
             <firstname>Salice</firstname>
             <lastname>Piangente</lastname>
-            <birthdate>1996-06-28</birthdate>
+            <birthdate>1954-09-06</birthdate>
             <healthprofile>
-                <weight>58.0</weight>
-                <height>1.15</height>
-                <bmi>43.85633270321362</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>80.0</weight>
+                <height>1.16</height>
+                <bmi>59.45303210463734</bmi>
             </healthprofile>
         </person>
         <person id="8">
             <firstname>Paolo</firstname>
             <lastname>Bitta</lastname>
-            <birthdate>1979-09-25</birthdate>
+            <birthdate>1989-09-05</birthdate>
             <healthprofile>
-                <weight>51.0</weight>
-                <height>1.01</height>
-                <bmi>49.995098519752965</bmi>
+                <lastUpdate>2016-10-24 17:19:21.573</lastUpdate>
+                <weight>56.0</weight>
+                <height>1.39</height>
+                <bmi>28.984007038973143</bmi>
             </healthprofile>
         </person>
         <person id="9">
             <firstname>Donato</firstname>
             <lastname>Cavallo</lastname>
-            <birthdate>1964-06-18</birthdate>
+            <birthdate>1990-05-11</birthdate>
             <healthprofile>
-                <weight>61.0</weight>
-                <height>1.62</height>
-                <bmi>23.243408017070564</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>51.0</weight>
+                <height>1.77</height>
+                <bmi>16.278847074595422</bmi>
             </healthprofile>
         </person>
         <person id="10">
             <firstname>Daria</firstname>
             <lastname>Corrente</lastname>
-            <birthdate>1949-03-21</birthdate>
+            <birthdate>1981-03-13</birthdate>
             <healthprofile>
-                <weight>78.0</weight>
-                <height>1.81</height>
-                <bmi>23.808797045267237</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>70.0</weight>
+                <height>1.04</height>
+                <bmi>64.7189349112426</bmi>
             </healthprofile>
         </person>
         <person id="11">
             <firstname>John</firstname>
             <lastname>Smith</lastname>
-            <birthdate>1947-07-29</birthdate>
+            <birthdate>1944-12-04</birthdate>
             <healthprofile>
-                <weight>51.0</weight>
-                <height>1.64</height>
-                <bmi>18.961927424152293</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>61.0</weight>
+                <height>1.03</height>
+                <bmi>57.49835045715902</bmi>
             </healthprofile>
         </person>
         <person id="12">
             <firstname>Ilaria</firstname>
             <lastname>Condizionata</lastname>
-            <birthdate>1959-10-05</birthdate>
+            <birthdate>1974-08-04</birthdate>
             <healthprofile>
-                <weight>55.0</weight>
-                <height>1.05</height>
-                <bmi>49.88662131519274</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>90.0</weight>
+                <height>1.92</height>
+                <bmi>24.4140625</bmi>
             </healthprofile>
         </person>
         <person id="13">
             <firstname>Ali</firstname>
             <lastname>Mentari</lastname>
-            <birthdate>1960-09-04</birthdate>
+            <birthdate>1978-03-08</birthdate>
             <healthprofile>
-                <weight>66.0</weight>
-                <height>1.18</height>
-                <bmi>47.40017236426315</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>59.0</weight>
+                <height>1.12</height>
+                <bmi>47.034438775510196</bmi>
             </healthprofile>
         </person>
         <person id="14">
             <firstname>Andrea</firstname>
             <lastname>Fumagalli</lastname>
-            <birthdate>1975-02-05</birthdate>
+            <birthdate>1961-02-24</birthdate>
             <healthprofile>
-                <weight>87.0</weight>
-                <height>1.75</height>
-                <bmi>28.408163265306122</bmi>
+                <lastUpdate>2016-10-24 17:19:21.574</lastUpdate>
+                <weight>82.0</weight>
+                <height>1.66</height>
+                <bmi>29.757584555087824</bmi>
             </healthprofile>
         </person>
         <person id="15">
             <firstname>Ermenegildo</firstname>
             <lastname>Brambilla</lastname>
-            <birthdate>1978-03-06</birthdate>
+            <birthdate>1958-08-10</birthdate>
             <healthprofile>
-                <weight>88.0</weight>
-                <height>1.38</height>
-                <bmi>46.208779668136955</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>56.0</weight>
+                <height>1.55</height>
+                <bmi>23.309053069719038</bmi>
             </healthprofile>
         </person>
         <person id="16">
             <firstname>Fulvio</firstname>
             <lastname>Brambilla</lastname>
-            <birthdate>1947-09-14</birthdate>
+            <birthdate>1973-05-09</birthdate>
             <healthprofile>
-                <weight>57.0</weight>
-                <height>1.03</height>
-                <bmi>53.727966820624</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>74.0</weight>
+                <height>1.32</height>
+                <bmi>42.47015610651974</bmi>
             </healthprofile>
         </person>
         <person id="17">
             <firstname>Italo</firstname>
             <lastname>Medio</lastname>
-            <birthdate>1984-11-07</birthdate>
+            <birthdate>1951-10-08</birthdate>
             <healthprofile>
-                <weight>52.0</weight>
-                <height>1.5</height>
-                <bmi>23.11111111111111</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>54.0</weight>
+                <height>1.73</height>
+                <bmi>18.042701059173375</bmi>
             </healthprofile>
         </person>
         <person id="18">
             <firstname>Patrizia</firstname>
             <lastname>Trento</lastname>
-            <birthdate>1954-10-16</birthdate>
+            <birthdate>1961-07-30</birthdate>
             <healthprofile>
-                <weight>67.0</weight>
-                <height>1.03</height>
-                <bmi>63.153925911961544</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>57.0</weight>
+                <height>1.84</height>
+                <bmi>16.836011342155007</bmi>
             </healthprofile>
         </person>
         <person id="19">
             <firstname>Davide</firstname>
             <lastname>Illuminato</lastname>
-            <birthdate>1958-10-19</birthdate>
+            <birthdate>1994-02-16</birthdate>
             <healthprofile>
-                <weight>59.0</weight>
-                <height>1.31</height>
-                <bmi>34.3802808694132</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>53.0</weight>
+                <height>1.81</height>
+                <bmi>16.17777235127133</bmi>
             </healthprofile>
         </person>
         <person id="20">
             <firstname>Gilberto</firstname>
             <lastname>Fumagalli</lastname>
-            <birthdate>1994-09-26</birthdate>
+            <birthdate>1988-08-10</birthdate>
             <healthprofile>
-                <weight>63.0</weight>
-                <height>1.03</height>
-                <bmi>59.38354227542653</bmi>
+                <lastUpdate>2016-10-24 17:19:21.575</lastUpdate>
+                <weight>85.0</weight>
+                <height>1.39</height>
+                <bmi>43.99358211272709</bmi>
             </healthprofile>
         </person>
+    </peopleList>
 </people>
