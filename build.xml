@@ -106,7 +106,13 @@
 		</copy>
 	</target>
 
-	<target name="execute.HPWriter">
+	<target name="execute.evaluation" depends="compile">
+		<echo message="Executing evauluation"/>
+		<java classname="Evaluation" classpath="${build.dir}">
+		</java>
+	</target>
+
+	<!--<target name="execute.HPWriter">
 		<echo message="Executing Health Profile Writer: will produce a people.xml in home folder" />
 		<java classname="HealthProfileWriter" classpath="${build.dir}">
 			<classpath>
@@ -188,5 +194,5 @@
 				</fileset>
 			</classpath>
 		</java>
-	</target>
+	</target>-->
 </project>

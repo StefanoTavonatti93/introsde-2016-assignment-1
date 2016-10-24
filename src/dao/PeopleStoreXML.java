@@ -12,6 +12,9 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class PeopleStoreXML {
@@ -60,6 +63,47 @@ public class PeopleStoreXML {
 		XPathExpression exp=xPath.compile("/people/person[@id="+personID+"]/healthprofile/height");
 		Double height= (Double) exp.evaluate(document, XPathConstants.NUMBER);
 		return height.doubleValue();
+	}
+	
+	public NodeList getNodeByExpression(String exp) throws XPathExpressionException{
+		XPathExpression e=xPath.compile(exp);
+		Object list=e.evaluate(document,XPathConstants.NODESET);
+		
+		if(list instanceof NodeList)
+			return (NodeList) list;
+		else return null;
+	}
+	
+	public String list(NodeList nList){
+		
+		String result="";
+		
+		if(nList==null)
+			return result;
+		
+		for(int i=0;i<nList.getLength();i++){
+			Node node=nList.item(i);
+			
+			if(node.getNodeName().equals("person"))
+				result+="person [ID="+node.getAttributes().item(0).getNodeValue()+"]:";
+			else if(node.getNodeType()==Node.ELEMENT_NODE)
+				result+=""+node.getNodeName()+": ";
+			else if(node.getNodeType()==Node.TEXT_NODE)
+				result+=node.getNodeValue();
+			
+			//result+=node.getNodeName()+": "+node.getNodeValue();
+			if(node.hasChildNodes()){
+				result+=list(node.getChildNodes());
+			}
+			
+			
+		}
+		
+		return result;
+	}
+	
+	public String list() throws XPathExpressionException{
+		return list(getNodeByExpression("/people/person"));
 	}
 
 	
