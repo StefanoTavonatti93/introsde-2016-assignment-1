@@ -65,6 +65,12 @@ public class PeopleStoreXML {
 		return height.doubleValue();
 	}
 	
+	/**
+	 * Get a node list by an XPATH expression
+	 * @param exp the xepression that will be parsed
+	 * @return a NodeList containing all nodes that satisied the given expression
+	 * @throws XPathExpressionException
+	 */
 	public NodeList getNodeByExpression(String exp) throws XPathExpressionException{
 		XPathExpression e=xPath.compile(exp);
 		Object list=e.evaluate(document,XPathConstants.NODESET);
@@ -74,6 +80,11 @@ public class PeopleStoreXML {
 		else return null;
 	}
 	
+	/**
+	 * Read the NodeList passed in paramiters an write it as a string
+	 * @param nList
+	 * @return
+	 */
 	public String list(NodeList nList){
 		
 		String result="";
@@ -102,6 +113,11 @@ public class PeopleStoreXML {
 		return result;
 	}
 	
+	/**
+	 * return a string that contains all node in the XML database
+	 * @return
+	 * @throws XPathExpressionException
+	 */
 	public String list() throws XPathExpressionException{
 		return list(getNodeByExpression("/people/person"));
 	}
