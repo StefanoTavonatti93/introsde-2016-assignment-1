@@ -2,10 +2,15 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.xml.bind.JAXBException;
+import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.datatype.DatatypeFactory;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPathExpressionException;
 
@@ -37,7 +42,7 @@ public class Evaluation {
 			System.exit(1);
 		}
 		
-		//EvaluationXPATH();
+		EvaluationXPATH();
 		EvaluationMarshalling();
 		
 		////////unmarshalling the new xml database///////////////////////////
@@ -101,33 +106,48 @@ public class Evaluation {
 		try {
 			
 			
+			GregorianCalendar c1 = new GregorianCalendar();
+			c1.setTime(new Date(System.currentTimeMillis()));
+			XMLGregorianCalendar now = DatatypeFactory.newInstance().newXMLGregorianCalendar(c1);
+			
 			
 			
 			People store=new People();
 			
 			////////adding first new person///////////////////////////////
+			GregorianCalendar c = new GregorianCalendar();
+			c.set(RandomDate.random(1950, 2000), RandomDate.random(1, 12), RandomDate.random(1, 28));
+			XMLGregorianCalendar date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+			
 			People.Person.Healthprofile hp=new People.Person.Healthprofile();
 			hp.setHeight(RandomDate.random(50,90));
 			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
 			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
-			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			hp.setLastUpdate(now);
 			People.Person person=new People.Person();
 			person.setId(new Long(1));
+			person.setBirthdate(date2);
 			person.setFirstname("Mario");
 			person.setLastname("Mario");
 			person.setHealthprofile(hp);
 			
 			
+			
 			store.getPerson().add(person);
 			
 			////////adding second new person///////////////////////////////
+			c = new GregorianCalendar();
+			c.set(RandomDate.random(1950, 2000), RandomDate.random(1, 12), RandomDate.random(1, 28));
+			date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+			
 			hp=new People.Person.Healthprofile();
 			hp.setHeight(RandomDate.random(50,90));
 			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
 			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
-			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			hp.setLastUpdate(now);
 			person=new People.Person();
 			person.setId(new Long(1));
+			person.setBirthdate(date2);
 			person.setFirstname("Luigi");
 			person.setLastname("Mario");
 			person.setHealthprofile(hp);
@@ -136,13 +156,18 @@ public class Evaluation {
 			
 			////////adding third new person///////////////////////////////
 
+			c = new GregorianCalendar();
+			c.set(RandomDate.random(1950, 2000), RandomDate.random(1, 12), RandomDate.random(1, 28));
+			date2 = DatatypeFactory.newInstance().newXMLGregorianCalendar(c);
+			
 			hp=new People.Person.Healthprofile();
 			hp.setHeight(RandomDate.random(50,90));
 			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
 			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
-			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			hp.setLastUpdate(now);
 			person=new People.Person();
 			person.setId(new Long(1));
+			person.setBirthdate(date2);
 			person.setFirstname("Pierluigi");
 			person.setLastname("Zafferano");
 			person.setHealthprofile(hp);
@@ -177,6 +202,9 @@ public class Evaluation {
 			System.err.println("File not found");
 			e.printStackTrace();
 		} catch (JAXBException e) {
+			e.printStackTrace();
+		} catch (DatatypeConfigurationException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
