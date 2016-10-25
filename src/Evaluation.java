@@ -1,6 +1,7 @@
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,8 +11,8 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.xml.sax.SAXException;
 
-import dao.PeopleStore;
 import dao.PeopleStoreXML;
+import generated.People;
 import model.HealthProfile;
 import model.Person;
 import utilities.MarshallingUtilities;
@@ -36,8 +37,30 @@ public class Evaluation {
 			System.exit(1);
 		}
 		
-		EvaluationXPATH();
+		//EvaluationXPATH();
 		EvaluationMarshalling();
+		
+		////////unmarshalling the new xml database///////////////////////////
+		/*People xmlDB;
+			try {
+				xmlDB = MarshallingUtilities.unMarshalling(DEFAULT_FILE_NAME);
+				System.out.println("\n\n===============Printing the unmarshalled content of the new XML database==============\n");
+				List<People.Person> people=xmlDB.getPerson();
+				Iterator<People.Person> it=people.iterator();
+				
+				while(it.hasNext()){
+					People.Person p=it.next();
+					System.out.println(p.toString());
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JAXBException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/
+			
+			
 		
 		/*try {
 			System.out.println(peopleStoreXML.list());
@@ -78,25 +101,54 @@ public class Evaluation {
 		try {
 			
 			
-			PeopleStore store=new PeopleStore();
+			
+			
+			People store=new People();
 			
 			////////adding first new person///////////////////////////////
-			HealthProfile hp = new HealthProfile(RandomDate.random(50,90), (double)(RandomDate.random(100,200))/100.0);
-			Person person=new Person(new Long(1),"Mario","Mario",RandomDate.randomDOB(),hp);
+			People.Person.Healthprofile hp=new People.Person.Healthprofile();
+			hp.setHeight(RandomDate.random(50,90));
+			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
+			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
+			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			People.Person person=new People.Person();
+			person.setId(new Long(1));
+			person.setFirstname("Mario");
+			person.setLastname("Mario");
+			person.setHealthprofile(hp);
 			
-			store.getData().add(person);
+			
+			store.getPerson().add(person);
 			
 			////////adding second new person///////////////////////////////
-			hp = new HealthProfile(RandomDate.random(50,90), (double)(RandomDate.random(100,200))/100.0);
-			person=new Person(new Long(2),"Luigi","Mario",RandomDate.randomDOB(),hp);
+			hp=new People.Person.Healthprofile();
+			hp.setHeight(RandomDate.random(50,90));
+			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
+			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
+			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			person=new People.Person();
+			person.setId(new Long(1));
+			person.setFirstname("Luigi");
+			person.setLastname("Mario");
+			person.setHealthprofile(hp);
 			
-			store.getData().add(person);
+			store.getPerson().add(person);
 			
 			////////adding third new person///////////////////////////////
-			hp = new HealthProfile(RandomDate.random(50,90), (double)(RandomDate.random(100,200))/100.0);
-			person=new Person(new Long(3),"Pierluigi","Zafferano",RandomDate.randomDOB(),hp);
+
+			hp=new People.Person.Healthprofile();
+			hp.setHeight(RandomDate.random(50,90));
+			hp.setHeight((float)((RandomDate.random(100,200))/100.0));
+			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
+			hp.setLastUpdate(new Timestamp(System.currentTimeMillis()).toString());
+			person=new People.Person();
+			person.setId(new Long(1));
+			person.setFirstname("Pierluigi");
+			person.setLastname("Zafferano");
+			person.setHealthprofile(hp);
 			
-			store.getData().add(person);
+			store.getPerson().add(person);
+			
 			
 			////////marshalling of people xml/////////////////////////////
 			/*marshalling in the new people.xml file*/
@@ -109,15 +161,15 @@ public class Evaluation {
 			
 			
 			////////unmarshalling the new xml database///////////////////////////
-			PeopleStore xmlDB=MarshallingUtilities.unMarshalling(NEW_XML_DATABASE);
+			People xmlDB=MarshallingUtilities.unMarshalling(NEW_XML_DATABASE);
 			
 			System.out.println("\n\n===============Printing the unmarshalled content of the new XML database==============\n");
-			List<Person> people=store.getData();
-			Iterator<Person> it=people.iterator();
+			List<People.Person> people=store.getPerson();
+			Iterator<People.Person> it=people.iterator();
 			
 			while(it.hasNext()){
-				Person p=it.next();
-				System.out.println(p.toString());
+				People.Person p=it.next();
+				System.out.println(printPerson(p));
 			}
 			
 			
@@ -127,6 +179,14 @@ public class Evaluation {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private String printPerson(People.Person person){
+		return person.getFirstname()+" "+person.getLastname()+" [ID= "+person.getId()+"]\n\thealt profile: "+printHealthProfile(person.getHealthprofile())+"\n";
+	}
+	
+	private String printHealthProfile(People.Person.Healthprofile hp){
+		return "Height="+hp.getHeight()+", Weight="+hp.getWeight()+", BMI: "+hp.getBmi()+"\n\tlast update: "+hp.getLastUpdate();
 	}
 	
 	public static void main(String[] args){
