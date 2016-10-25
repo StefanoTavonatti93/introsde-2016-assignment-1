@@ -18,6 +18,7 @@ import org.xml.sax.SAXException;
 
 import dao.PeopleStoreXML;
 import generated.People;
+import utilities.JSONUtilities;
 import utilities.MarshallingUtilities;
 
 public class Evaluation {
@@ -25,6 +26,7 @@ public class Evaluation {
 	private PeopleStoreXML peopleStoreXML=null;
 	private final static String DEFAULT_FILE_NAME="people.xml";
 	private final static String NEW_XML_DATABASE="new_people.xml";
+	private final static String DEFAULT_JSON_FILE_NAME="people.json";
 	
 	public Evaluation(){
 		
@@ -196,12 +198,20 @@ public class Evaluation {
 			}
 			
 			
+			/////////////marshalling the 3 people created above in to people.json file///////////////
+			System.out.println("\n\n====Marshall the three new person to the people.json file=====\n");
+			JSONUtilities.MarshallToJSON(DEFAULT_JSON_FILE_NAME, store);
+			JSONUtilities.MarshallToJSON(System.out, store);
+			
 		} catch (FileNotFoundException e) {
 			System.err.println("File not found");
 			e.printStackTrace();
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		} catch (DatatypeConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
