@@ -31,8 +31,6 @@ public class JSONUtilities {
 		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
 
-        String result = mapper.writeValueAsString(people);
-        System.out.println(result);
         mapper.writeValue(new File("people.json"), people);
 	}
 	
@@ -54,8 +52,6 @@ public class JSONUtilities {
 		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
         mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
 
-        String result = mapper.writeValueAsString(people);
-        System.out.println(result);
         mapper.writeValue(stream, people);
 	}
 }

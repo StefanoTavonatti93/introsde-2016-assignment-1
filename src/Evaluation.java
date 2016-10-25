@@ -146,7 +146,7 @@ public class Evaluation {
 			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
 			hp.setLastUpdate(now);
 			person=new People.Person();
-			person.setId(new Long(1));
+			person.setId(new Long(2));
 			person.setBirthdate(date2);
 			person.setFirstname("Luigi");
 			person.setLastname("Mario");
@@ -166,7 +166,7 @@ public class Evaluation {
 			hp.setBmi((float)(hp.getHeight()/Math.pow(hp.getHeight(), 2)));
 			hp.setLastUpdate(now);
 			person=new People.Person();
-			person.setId(new Long(1));
+			person.setId(new Long(3));
 			person.setBirthdate(date2);
 			person.setFirstname("Pierluigi");
 			person.setLastname("Zafferano");

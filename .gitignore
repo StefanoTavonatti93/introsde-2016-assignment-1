@@ -3,3 +3,4 @@ lib/
 ivy/
 src/generated/
 new_people.xml
+people.json
