@@ -18,8 +18,6 @@ import org.xml.sax.SAXException;
 
 import dao.PeopleStoreXML;
 import generated.People;
-import model.HealthProfile;
-import model.Person;
 import utilities.MarshallingUtilities;
 
 public class Evaluation {
