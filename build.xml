@@ -109,6 +109,12 @@
 	<target name="execute.evaluation" depends="compile">
 		<echo message="Executing evauluation"/>
 		<java classname="Evaluation" classpath="${build.dir}">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+					<include name="*.jar" />
+				</fileset>
+			</classpath>
 		</java>
 	</target>
 

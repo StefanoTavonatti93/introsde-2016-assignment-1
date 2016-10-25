@@ -36,7 +36,7 @@ public class Evaluation {
 			System.exit(1);
 		}
 		
-		//EvaluationXPATH();
+		EvaluationXPATH();
 		EvaluationMarshalling();
 		
 		/*try {
