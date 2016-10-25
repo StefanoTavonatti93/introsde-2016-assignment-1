@@ -103,7 +103,7 @@ public class Evaluation {
 			MarshallingUtilities.marshalling(store, NEW_XML_DATABASE);
 			
 			/*marshalling in the console*/
-			System.out.println("\n\nPrinting the marshalled content of the new XML database:\n");
+			System.out.println("\n\n===============Printing the marshalled content of the new XML database=============\n");
 			MarshallingUtilities.marshalling(store, System.out);
 			
 			
@@ -111,7 +111,7 @@ public class Evaluation {
 			////////unmarshalling the new xml database///////////////////////////
 			PeopleStore xmlDB=MarshallingUtilities.unMarshalling(NEW_XML_DATABASE);
 			
-			System.out.println("\n\nPrinting the unmarshalled content of the new XML database:\n");
+			System.out.println("\n\n===============Printing the unmarshalled content of the new XML database==============\n");
 			List<Person> people=store.getData();
 			Iterator<Person> it=people.iterator();
 			
