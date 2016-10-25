@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <people>
-    <peopleList>
         <person id="1">
             <firstname>Guido</firstname>
             <lastname>Piano</lastname>
@@ -221,5 +220,4 @@
                 <bmi>66.92430954849657</bmi>
             </healthprofile>
         </person>
-    </peopleList>
 </people>

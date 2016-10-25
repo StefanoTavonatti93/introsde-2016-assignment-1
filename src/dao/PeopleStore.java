@@ -14,7 +14,7 @@ import model.Person;
 @XmlRootElement(name="people")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PeopleStore {
-	@XmlElementWrapper(name="peopleList")
+	//@XmlElementWrapper(name="peopleList")
 	@XmlElement(name="person")
 	private List<Person> data = new ArrayList<Person>();
 	

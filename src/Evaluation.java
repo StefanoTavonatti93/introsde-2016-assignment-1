@@ -40,6 +40,13 @@ public class Evaluation {
 		EvaluationMarshalling();
 		
 		/*try {
+			System.out.println(peopleStoreXML.list());
+		} catch (XPathExpressionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		/*try {
 			//System.out.println("weight: "+peopleStoreXML.getWeight(new Long(5))+" height: "+peopleStoreXML.getHeight(new Long(5)));
 			//System.out.println(peopleStoreXML.list());
 			System.out.println(peopleStoreXML.list(peopleStoreXML.getWeight(90, ">")));
