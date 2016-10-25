@@ -1,5 +1,6 @@
 package model;
 
+import java.security.GeneralSecurityException;
 import java.util.Calendar;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -102,5 +103,10 @@ public class Person {
 		}
 		long day = Math.round(Math.floor(Math.random()*(months[month-1]-1)+1));
 		return ""+year+"-"+month+"-"+day;
+	}
+	
+	@Override
+	public String toString(){
+		return getFirstname()+" "+getLastname()+" [ID= "+getPersonId()+"]\n\thealt profile: "+getHProfile().toString()+"\n";
 	}
 }

@@ -113,7 +113,7 @@ public class PeopleStoreXML {
 	}
 	
 	/**
-	 * Read the NodeList passed in paramiters and write it as a string
+	 * Read the NodeList passed in parameters and write it as a string
 	 * @param nList
 	 * @return
 	 */

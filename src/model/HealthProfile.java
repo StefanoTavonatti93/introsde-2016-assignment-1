@@ -43,7 +43,7 @@ public class HealthProfile {
 		this.height = height;
 	}
 	public String toString() {
-		return "Height="+height+", Weight="+weight;
+		return "Height="+height+", Weight="+weight+"\n\tlast update: "+getLastUpdate();
 	}
 
 	@XmlElement(name="bmi")

@@ -1,6 +1,8 @@
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -89,14 +91,28 @@ public class Evaluation {
 			
 			store.getData().add(person);
 			
-			////////umarshalling of people xml/////////////////////////////
-			/*the new people.xml*/
+			////////marshalling of people xml/////////////////////////////
+			/*marshalling in the new people.xml file*/
 			MarshallingUtilities.marshalling(store, NEW_XML_DATABASE);
+			
+			/*marshalling in the console*/
+			System.out.println("\n\nPrinting the marshalled content of the new XML database:\n");
+			MarshallingUtilities.marshalling(store, System.out);
+			
 			
 			
 			////////unmarshalling the new xml database///////////////////////////
 			PeopleStore xmlDB=MarshallingUtilities.unMarshalling(NEW_XML_DATABASE);
-			System.out.println(store.getData().size());
+			
+			System.out.println("\n\nPrinting the unmarshalled content of the new XML database:\n");
+			List<Person> people=store.getData();
+			Iterator<Person> it=people.iterator();
+			
+			while(it.hasNext()){
+				Person p=it.next();
+				System.out.println(p.toString());
+			}
+			
 			
 		} catch (FileNotFoundException e) {
 			System.err.println("File not found");
