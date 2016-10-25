@@ -210,7 +210,7 @@ public class Evaluation {
 	}
 	
 	private String printPerson(People.Person person){
-		return person.getFirstname()+" "+person.getLastname()+" [ID= "+person.getId()+"]\n\thealt profile: "+printHealthProfile(person.getHealthprofile())+"\n";
+		return person.getFirstname()+" "+person.getLastname()+" BirthDate: "+person.getBirthdate().toString()+" [ID= "+person.getId()+"]\n\thealt profile: "+printHealthProfile(person.getHealthprofile())+"\n";
 	}
 	
 	private String printHealthProfile(People.Person.Healthprofile hp){
