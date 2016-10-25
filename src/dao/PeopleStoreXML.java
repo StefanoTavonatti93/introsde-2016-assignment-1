@@ -104,16 +104,20 @@ public class PeopleStoreXML {
 	 * @throws XPathExpressionException
 	 */
 	public NodeList getNodeByExpression(String exp) throws XPathExpressionException{
+		//compile the XPATH expression
 		XPathExpression e=xPath.compile(exp);
+		
+		//Evaluate the expression and return a node set
 		Object list=e.evaluate(document,XPathConstants.NODESET);
 		
+		//check if the list object is realy a nodeset
 		if(list instanceof NodeList)
 			return (NodeList) list;
 		else return null;
 	}
 	
 	/**
-	 * Read the NodeList passed in parameters and write it as a string
+	 * Read the NodeList passed in parameters and write it as a formatted string
 	 * @param nList
 	 * @return
 	 */
@@ -134,7 +138,7 @@ public class PeopleStoreXML {
 			else if(node.getNodeType()==Node.TEXT_NODE)
 				result+=node.getNodeValue();
 			
-			
+			//if the node has children, print also the children
 			if(node.hasChildNodes()){
 				result+=list(node.getChildNodes());
 			}
