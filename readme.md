@@ -1,14 +1,20 @@
 **Stefano Tavonatti**
 
-#Introduction to Service Design and Engineering Course
+#introsde-2016-assignment-1
 
-#First Assignment
+
+###General description.
+
+- In the *default* package there is the **Evaluation** class: this class executes the task required by the assigments. 
+- In the *dao* package there is the **PeopleStoreXML** class: this class exposes the methods necessary for reads the **people.xml** file using XPATH. 
+- In the *utilities* package there are the **MarshallingUtilities** class and the **JSONutilities** class. The MarshallingUtilities exposes the necessary methods to map the **people.xml** on Java Object. The JSONUtilities exposes the method that allows to Map a Java object on to a JSON File.
+- In the root folder there are the **build.xml** file and the **ivy.xml**. The build.xml contains the istruction that **ant** needs to execute and run the project. ivy.xml contains the dependency of the project.
 
 ###1. Implementation
 
 #####1.1 XPATH (Based on Lab3)
 
-In this chapter will be discussed the implementation of the code for the task based on Lab3.
+In this chapter it will be discussed the implementation of the  task based on Lab3.
 
 In order to execute this task the class **PeopleStoreXML** has been implemented. This class, in its constructor load and parse the **people.xml** file.
 
@@ -217,7 +223,58 @@ This method works in the same way of the methode *marshalling(People people,Stri
 
 #####1.3 JSON (Based on Lab4)
 
-#####2
+In this chapter will be discussed the implementation of the task about the JSON marshalling based on Lab4.
+
+In order to execute the task, the class **JSONUtilities** has been implemented. This classes exposes the methods that allows a programmer to:
+
+- marshall a People object on a JSON file and print it on the disk
+- marshall a People object on a JSON file and print it on a PrintStream
+
+----
+
+In order to marshall a People object on a JSON file and print it on the disk, the following method has been implemented:
+
+```java
+public static void MarshallToJSON(String fileName, People people) throws IOException{
+		// Jackson Object Mapper 
+		ObjectMapper mapper = new ObjectMapper();
+		
+		// Adding the Jackson Module to process JAXB annotations
+        JaxbAnnotationModule module = new JaxbAnnotationModule();
+        
+		// configure as necessary
+		mapper.registerModule(module);
+		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
+
+        mapper.writeValue(new File("people.json"), people);
+	}
+```
+
+This method takes as imput a String containig a file name, a People object and write a JSON file (with the given name) which contains the content of the People object. In order to doind that it uses the jackson library. Jackson is a  JSON parser / generator library and a matching data-binding library (POJOs to and from JSON) for Java.
+
+First, this method load the *jackson module* tha allows jackson to understand the JAXB annotation. Finally it serialize the content of the People object and write it in a JSON file.
+
+- To marshall a People object on a JSON file and print it on a PrintStream, the following method ad been implemented:
+
+```java 
+public static void MarshallToJSON(PrintStream stream, People people) throws IOException{
+		// Jackson Object Mapper 
+		ObjectMapper mapper = new ObjectMapper();
+		
+		// Adding the Jackson Module to process JAXB annotations
+        JaxbAnnotationModule module = new JaxbAnnotationModule();
+        
+		// configure as necessary
+		mapper.registerModule(module);
+		mapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+        mapper.configure(SerializationFeature.ORDER_MAP_ENTRIES_BY_KEYS, true);
+
+        mapper.writeValue(stream, people);
+	}
+```
+
+This method works in the same way as the previous one, but write the JSON file on the PrintStream.
 
 
 #####3 Run the assignments
@@ -236,4 +293,4 @@ To run the assignment use the following command:
 ```bash
  ant execute.evaluation  
 ```
-This task first execute the *compile* task and finally execute the code
+This task first execute the *compile* task and finally execute the **Evaluation** class.
